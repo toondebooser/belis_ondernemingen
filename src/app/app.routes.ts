@@ -3,7 +3,7 @@ import { HomeComponent } from "./home/home.component";
 import { SnoeienComponent } from "./snoeien/snoeien.component";
 import { VellenComponent } from "./vellen/vellen.component";
 import { VerkoopComponent } from "./verkoop/verkoop.component";
-import { FrezenComponent } from "./frezen/frezen.component";
+import { ContactComponent } from "./contact/contact.component";
 
 export const routes: Routes = [
   {
@@ -27,9 +27,9 @@ export const routes: Routes = [
     title: "Verkoop",
   },
   {
-    path:"frezen",
-    component: FrezenComponent,
-    title: "Frezen"
+    path:"contact",
+    component: ContactComponent ,
+    title: "Contact"
 
   }
 ];
