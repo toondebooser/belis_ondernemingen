@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --primary-color: #473128;
+    --logo-white: #FBFAFA;
+}
+html,
+body {
+
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  height: 100svh;
+  margin: 0px;
+  font-weight: 300;
+}
+a{
+     font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    color: #FBFAFA;
+}
