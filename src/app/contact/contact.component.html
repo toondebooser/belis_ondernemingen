@@ -1,1 +1,45 @@
-<p>contact works!</p>
+<span class="content">
+  <div class="pageHeader">Contact</div>
+  <div class="contentSection" id="contactForm">
+    @for (inputType of getObjectKeys(contactData); track $index ){
+    @if(validation[inputType] === false){
+    <div class="red">* {{ inputType }} Ongeldig</div>
+    }  
+    
+    @if(inputType === "bericht"){
+    <textarea
+      #input
+      placeholder="{{ inputType + ' *' }}"
+      id="{{ inputType }}"
+      (input)="userInput($event, inputType)"
+      style="height: 100px"
+    >{{contactData[inputType]}}</textarea>
+    } 
+    
+    @else {
+    <input
+      #input
+      placeholder="{{ inputType + ' *' }}"
+      id="{{ inputType }}"
+      type="text"
+      (input)="userInput($event, inputType)"
+      value="{{contactData[inputType]}}"
+    />
+    }}
+    @if (patternService.valid === true){
+      <button (click)="sendEmail()" class="verzendButton">Verzenden</button>
+    }
+    @else {
+      <button class="notActive">Verzenden</button>
+    }
+
+    <div class="checklist">
+
+      Gratis offerte &check; <br />
+      Snelle respons &check; <br />
+      Persoonlijke aanpak &check; <br>
+
+    </div>
+  </div>
+
+</span>
