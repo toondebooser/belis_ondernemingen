@@ -10,14 +10,14 @@ export class EmailService {
   private TEMPLATE_ID = 'template_9m4n4ea';
   private PUBLIC_KEY = 'nD8c0oopLsuhHOiPT';
 
-  sendEmail(contactData: { email: string; bericht: string; titel: string; telefoon: Number; }) {
+  sendEmail(contactData: { email: string; bericht: string; onderwerp: string; telefoon: Number; }) {
     return emailjs.send(
       this.SERVICE_ID,
       this.TEMPLATE_ID,
       {
         email: contactData.email,
         bericht: contactData.bericht,
-        titel: contactData.titel,
+        onderwerp: contactData.onderwerp,
         telefoon: contactData.telefoon
       },
       this.PUBLIC_KEY
