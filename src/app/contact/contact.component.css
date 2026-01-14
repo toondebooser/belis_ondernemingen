@@ -1,8 +1,24 @@
 #contactForm {
+  justify-self: center;
+  display: grid;
+  justify-content: center;
   width: 70%;
+  gap:10px;
   padding: 0;
 }
+.pageHeader{
+  margin: 20px 0px;
+  color: var(--primary-color);
+  justify-self: center;
+  font-size: x-large;
+  font-weight: 400
+  
+}
+
 .verzendButton {
+  background-color: var(--primary-color);
+  color: var(--logo-white);
+  border-radius: 10px;
   display: inline;
   width: 100%;
 }
@@ -20,48 +36,40 @@
 input,
 textarea {
   border: none;
-  background-color: lightgray;
+  background-color:  #dad5d4;
   font-weight: 300;
   padding: 10px;
   color: black;
   border-radius: 10px;
   height: 20px;
 }
-.notActive{
-  display: none;
+.blur{
+  filter: blur(2px);          /* Adjust the px value to taste: 4px–12px is common */
+  transition: filter 0.3s ease; /* Smooth fade-in/out */
+  pointer-events: none;  
 }
-.loaderWrapper {
-  display: none;
-  justify-items: center;
-  position: absolute;
-}
+/* HTML: <div class="loader"></div> */
 .loader {
-  width: 60px;
-  height: 25px;
-  border: 2px solid;
-  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-bottom: -12,5px;
+  margin-left: -12.5px;
+  width: 25px;
+  padding: 3px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  display: grid;
-  animation: l2 2s infinite linear;
+  background: var(--primary-color);
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
 }
-.loader:before,
-.loader:after {
-  content: "";
-  grid-area: 1/1;
-  border: inherit;
-  border-radius: 50%;
-  animation: inherit;
-  animation-duration: 3s;
-}
-.loader:after {
-  --s: -1;
-}
-
-@keyframes l2 {
-  100% {
-    transform: rotate(calc(var(--s, 1) * 1turn));
-  }
-}
+@keyframes l3 {to{transform: rotate(1turn)}}
 @media (min-width: 800px) {
   #contactForm {
     grid-template-columns: 1fr;

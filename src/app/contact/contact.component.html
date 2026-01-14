@@ -3,11 +3,11 @@
   <div class="contentSection" id="contactForm">
     @for (inputType of getObjectKeys(contactData); track $index ){
     @if(validation[inputType] === false){
-    <div class="red">* {{ inputType }} Ongeldig</div>
+    <div [class.blur]="loading"  class="red">* {{ inputType }} Ongeldig</div>
     }  
     
     @if(inputType === "bericht"){
-    <textarea
+    <textarea [class.blur]="loading" 
       #input
       placeholder="{{ inputType + ' *' }}"
       id="{{ inputType }}"
@@ -17,7 +17,7 @@
     } 
     
     @else {
-    <input
+    <input [class.blur]="loading" 
       #input
       placeholder="{{ inputType + ' *' }}"
       id="{{ inputType }}"
@@ -26,14 +26,14 @@
       value="{{contactData[inputType]}}"
     />
     }}
-    @if (patternService.valid === true){
-      <button (click)="sendEmail()" class="verzendButton">Verzenden</button>
-    }
-    @else {
-      <button class="notActive">Verzenden</button>
+    @if (patternService.valid === false){
+      <button [class.blur]="loading"  (click)="sendEmail()" class="verzendButton" [disabled]="loading">{{loading? 'Verzenden...' :'Verstuur'}}</button>
     }
 
-  
+    
+    <div *ngIf="loading" class="loader"></div>
+    <div [ngClass]="{
+    'success': success,
+    'error':   error && !success}"  > {{message}}</div>
   </div>
-
 </span>
