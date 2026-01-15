@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 import { PatternService } from "../services/pattern.service";
 import { EmailService } from "../services/email.service";
-import { NgIf, NgClass } from "@angular/common";
+import { NgIf, NgClass, NgForOf } from "@angular/common";
 
 @Component({
   selector: "app-contact",
@@ -17,10 +17,10 @@ import { NgIf, NgClass } from "@angular/common";
   styleUrl: "./contact.component.css",
 })
 export class ContactComponent {
-  success = false;
-  error = false;
-  loading = false;
-  message = "";
+  success: boolean = false;
+  error: boolean = false;
+  loading: boolean = false;
+  message: string  = "";
 
   patternService = inject(PatternService);
   emailservice = inject(EmailService);

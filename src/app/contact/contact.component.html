@@ -2,9 +2,9 @@
   <div class="pageHeader">Contact</div>
   <div class="contentSection" id="contactForm">
     @for (inputType of getObjectKeys(contactData); track $index ){
-    @if(validation[inputType] === false){
+    <!-- @if(validation[inputType] === false){
     <div [class.blur]="loading"  class="red">* {{ inputType }} Ongeldig</div>
-    }  
+    }   -->
     
     @if(inputType === "bericht"){
     <textarea [class.blur]="loading" 
@@ -26,11 +26,17 @@
       value="{{contactData[inputType]}}"
     />
     }}
-    @if (patternService.valid === false){
+    @if (!patternService.valid === false){
       <button [class.blur]="loading"  (click)="sendEmail()" class="verzendButton" [disabled]="loading">{{loading? 'Verzenden...' :'Verstuur'}}</button>
     }
 
-    
+    <div class="red" [class.blur]="loading">
+  @for (inputType of getObjectKeys(validation); track inputType) {
+    @if (validation[inputType] === false) {   <!-- or === true – your invalid marker -->
+      <div>* {{ inputType }} Ongeldig</div>
+    }
+  }
+</div>
     <div *ngIf="loading" class="loader"></div>
     <div [ngClass]="{
     'success': success,
