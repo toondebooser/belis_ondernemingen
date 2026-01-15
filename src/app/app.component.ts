@@ -7,7 +7,7 @@ import { LowerCasePipe, NgForOf } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NgForOf, LowerCasePipe],
+  imports: [RouterOutlet, RouterLink, NgForOf, LowerCasePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

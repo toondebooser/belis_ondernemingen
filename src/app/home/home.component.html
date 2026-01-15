@@ -1,10 +1,10 @@
 <span class="content">
 
-  <a routerLink="snoeien" class="card" id="snoeienCard">
+  <!-- <a routerLink="snoeien" class="card" id="snoeienCard">
     <div id="topCard"  class="pic">
       <img
         class="homePictures"
-        src="assets/img/snoeien-low.jpg"
+        src="/src/asse"
         alt="image load fail"
       />
     </div>
@@ -32,10 +32,42 @@
       />
     </div>
     <div class="desc">Atelier</div>
+  </a> -->
+@for (service of companyServices.companyServices; track $index) {
+  @if (service !== 'contact') {
+    <a class="card" [routerLink]="(service|lowercase)">
+      <div class="pic">
+        <img
+          [src]="'/assets/pictogrammen/' + service + '.png'"
+          [alt]="service"
+        >
+      </div>
+    </a>
+  }
+}
+
+<!-- <ng-container *ngFor="let service of companyServices.companyServices">
+  <a *ngIf="service !== 'contact'" [routerLink]="'/' + service">
+    <img [src]="'/src/assets/pictogrammen/'+ service + '.png'" [alt]="service">
   </a>
-  <p class="disclaimer">
+</ng-container> -->
+<!-- @for (service of companyServices.companyServices; track service) {
+  @if (service !== 'contact') {
+    <a [routerLink]="['/', service]">
+      <img 
+        [src]="'/assets/pictogrammen/' + service + '.png'" 
+        [alt]="service "
+        loading="lazy"
+        width="48" height="48"  
+        onerror="this.src='/assets/pictogrammen/fallback.png'"  
+      >
+    </a>
+  }
+} -->
+
+  <!-- <p class="disclaimer">
     © <span id="currentYear">{{ this.domService.getYear() }}</span> De Booser
     Toon, All rights reserved.
-  </p>
+  </p> -->
   <div class="whiteSpace"></div>
 </span>

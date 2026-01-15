@@ -2,9 +2,7 @@
   <div class="pageHeader">Contact</div>
   <div class="contentSection" id="contactForm">
     @for (inputType of getObjectKeys(contactData); track $index ){
-    <!-- @if(validation[inputType] === false){
-    <div [class.blur]="loading"  class="red">* {{ inputType }} Ongeldig</div>
-    }   -->
+   
     
     @if(inputType === "bericht"){
     <textarea [class.blur]="loading" 

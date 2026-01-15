@@ -6,9 +6,9 @@
       alt="Belis Ondernemingen"
     />
     <nav>
-      <a class="navButton" routerLink="">Home</a>
+      <a class="navButton" routerLinkActive="active" routerLink="">Home</a>
      
-  <a class="navButton" *ngFor="let service of companyServices.companyServices" [routerLink]="'/' + (service | lowercase)">
+  <a class="navButton" routerLinkActive="active" *ngFor="let service of companyServices.companyServices" [routerLink]="'/' + (service | lowercase)">
     {{ service }} 
   </a>
 
