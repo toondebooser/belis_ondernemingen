@@ -14,18 +14,35 @@
   display: none;
 }
 .content{
+
+    background-image:  linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.3)
+    ), url('/assets/images/verkoop/3.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
   display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  
 }
 .pic{
   width: 120px;
 }
 
 
-
-@media (min-width: 800px) {
-  .homePictures{
-    margin-top: 100px;
+@media (max-width: 800px){
+  .content{
+    flex-direction: column;
   }
+}
+@media (min-width: 800px) {
+  /* .homePictures{
+    margin-top: 100px;
+  } */
 
   .disclaimer{
     grid-column: 1/4;
