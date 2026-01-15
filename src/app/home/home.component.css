@@ -1,8 +1,5 @@
 .card {
-  width: 250px;
-  border-radius: 20px;
-  border-bottom: 1px solid grey;
-  background-color: white;
+  align-self: center;
 }
 .disclaimer {
   grid-column: 1/1;
@@ -11,26 +8,18 @@
   font-family: "Caveat", cursive;
 }
 .homePictures {
-  border-radius: 20px 20px 0px 0px;
   width: 100%;
 }
 .desktopLogo {
   display: none;
 }
-
-.desc {
-  font-family: "Caveat", cursive;
-  font-size: larger;
-  font-weight: 300;
-  text-align: center;
-  margin: 10px 0px;
+.content{
+  display: flex;
+}
+.pic{
+  width: 120px;
 }
 
-@media (max-width: 450px) {
-  .card {
-    width: 200px;
-  }
-}
 
 @media (min-width: 800px) {
   .homePictures{
