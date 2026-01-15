@@ -7,10 +7,14 @@ body {
 
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Open Sans", "Helvetica Neue", sans-serif;
-  height: 100vh;
-  height: 100svh;
-  margin: 0px;
+  height: 100%;
+  margin: 0;
   font-weight: 300;
+}
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100svh; 
 }
 .success{
   color: green;

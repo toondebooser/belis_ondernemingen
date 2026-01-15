@@ -7,28 +7,33 @@
   width: 100px;
   justify-self: center;
 }
+header {
+  flex: 0 0 auto;
+}
 nav{
   padding-top: 20px;
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
-.navButton{
+.nav {
   border-top: 1px solid transparent;
 }
 .navButton:hover{
   border-top: 1px solid var(--logo-white);
 }
+
+main {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
 footer {
+  flex: 0 0 auto;
   display: grid;
   justify-content: center;
   padding: 10px 0px;
   justify-items: center;
   color: var(--logo-white);
   background-color: var(--primary-color);
-}
-main{
-  height: calc(100svh - 182.69px);
-   overflow-y: auto;
-   background-color: var(--logo-white);
 }

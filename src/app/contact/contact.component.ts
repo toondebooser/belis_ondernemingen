@@ -56,17 +56,17 @@ export class ContactComponent {
     this.emailservice
       .sendEmail(this.contactData)
       .then((response) => {
-        console.log("Verzonden", response.status, response.text);
         this.loading = false;
         this.success = true;
+        this.message = "Bericht verstuurd";
+         setTimeout(() => this.resetContactSheet(), 3000);
       })
       .catch((error) => {
-        console.error("FAILED", error);
         this.loading = false;
         this.error = true;
+        this.message = "Er ging iets mis:" + error;
       });
 
-      // setTimeout()
   }
   checkAnyFieldNotEmpty(obj: any): boolean {
     return Object.values(obj).some((value) => value !== "");
@@ -82,6 +82,7 @@ export class ContactComponent {
   }
   resetContactSheet() {
     this.inputs.forEach((input) => (input.nativeElement.value = ""));
+    this.message = "";
     this.resetMailState();
   }
 }

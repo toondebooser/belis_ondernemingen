@@ -1,0 +1,62 @@
+.card {
+  width: 250px;
+  border-radius: 20px;
+  border-bottom: 1px solid grey;
+  background-color: white;
+}
+.disclaimer {
+  grid-column: 1/1;
+}
+.navButton {
+  font-family: "Caveat", cursive;
+}
+.homePictures {
+  border-radius: 20px 20px 0px 0px;
+  width: 100%;
+}
+.desktopLogo {
+  display: none;
+}
+
+.desc {
+  font-family: "Caveat", cursive;
+  font-size: larger;
+  font-weight: 300;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+@media (max-width: 450px) {
+  .card {
+    width: 200px;
+  }
+}
+
+@media (min-width: 800px) {
+  .homePictures{
+    margin-top: 100px;
+  }
+
+  .disclaimer{
+    grid-column: 1/4;
+  }
+  .content {
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+  }
+
+  .pageHeader {
+    grid-column: 1/4;
+    font-size: xx-large;
+  }
+  #snoeienCard {
+    justify-self: end;
+  }
+  #atelierCard {
+    grid-column: 3/4;
+    justify-self: start;
+  }
+  #vellenCard {
+    grid-column: 2/3;
+  }
+}
