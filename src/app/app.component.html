@@ -7,7 +7,12 @@
     />
     <nav>
       <a class="navButton" routerLink="">Home</a>
-      <a class="navButton" routerLink="snoeien" routerLinkActive="active"
+     
+  <a class="navButton" *ngFor="let service of companyServices.companyServices" [routerLink]="'/' + (service | lowercase)">
+    {{ service }} 
+  </a>
+
+      <!-- <a class="navButton" routerLink="snoeien" routerLinkActive="active"
         >Snoeien</a
       >
       <a class="navButton" routerLink="vellen" routerLinkActive="active"
@@ -18,7 +23,7 @@
       >
       <a class="navButton" routerLink="contact" routerLinkActive="active"
         >Contact</a
-      >
+      > -->
     </nav>
   </div>
 </header>

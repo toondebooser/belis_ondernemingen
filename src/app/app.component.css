@@ -16,7 +16,7 @@ nav{
   gap: 1rem;
   justify-content: center;
 }
-.nav {
+.navButton {
   border-top: 1px solid transparent;
 }
 .navButton:hover{
