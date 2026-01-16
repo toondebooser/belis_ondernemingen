@@ -2,21 +2,13 @@
     --primary-color: #473128;
     --logo-white: #FBFAFA;
 }
-/* .content {
-  background-image:  linear-gradient(
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
-    ), url('/assets/images/verkoop/3.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+
 html,
 body {
 
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Open Sans", "Helvetica Neue", sans-serif;
-  height: 100%;
+  height: 100svh;
   margin: 0;
   font-weight: 300;
 }
@@ -43,4 +35,16 @@ a{
     font-weight: 300;
     text-decoration: none;
     color: #FBFAFA;
+}
+.textCard{
+  background-color: var(--primary-color);
+  color: var(--logo-white);
+   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Open Sans", "Helvetica Neue", sans-serif;
+    width: 50%;
+    height: 40%;
+    align-self: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 30px black;
 }
