@@ -1,0 +1,17 @@
+
+ .content{
+    padding-top: 20px;
+    gap: 20px;
+overflow-x: auto;
+     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+        url("/assets/images/vellen/1.jpeg");
+      background-size: cover;
+      background-position: center center; 
+      background-repeat: no-repeat;
+       background-attachment: fixed; 
+      height: 100%;
+    display: flex;
+    flex-direction: column;
+justify-content: space-around;
+
+ }

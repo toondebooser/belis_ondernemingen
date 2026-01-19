@@ -1,5 +1,7 @@
 
  .content{
+    padding-top: 20px;
+    gap: 20px;
 overflow-x: auto;
      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
         url("/assets/images/snoeien/2.jpeg");

@@ -1,0 +1,47 @@
+/* Reset – do this globally (styles.scss or root component) */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;           /* ← very important in most angular apps */
+}
+
+/* The REAL scroll container — must have explicit height + overflow */
+.content {
+  height: 100%;             /* or 100vh – dvh is better on mobile */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;    /* optional but very nice */
+  -webkit-overflow-scrolling: touch; /* iOS momentum feel */
+}
+
+/* Hide scrollbar if you want clean look */
+.content::-webkit-scrollbar {
+  display: none;
+}
+.content {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* Edge/IE */
+}
+
+/* Sections */
+.hakselhout,
+.brandhout {
+height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;   /* recommended with mandatory */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed;    ← try without first – often problematic on mobile */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* better visual balance than space-around */
+  align-items: center;
+
+  box-sizing: border-box;
+  color: white;
+}
