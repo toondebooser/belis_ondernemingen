@@ -23,10 +23,12 @@ app-root {
   background-color: lightgreen;
   border-radius: 5px;
   text-align: center;
+  height: 100%;
 }
 .error{
   background-color: lightpink;
   color: red;
+  height: 100%;
     border-radius: 5px;
   text-align: center;
 }
@@ -50,3 +52,4 @@ a{
     backdrop-filter: blur(4px);
     background: rgba(0,0,0,0.5);
 }
+

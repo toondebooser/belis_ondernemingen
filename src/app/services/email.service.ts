@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class EmailService {
-  private SERVICE_ID = "service_j7krcd8";
+  private SERVICE_ID = "service_hneskuz";
   private TEMPLATE_ID = "template_9m4n4ea";
   private PUBLIC_KEY = "nD8c0oopLsuhHOiPT";
 
