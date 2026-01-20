@@ -20,7 +20,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrl: "./contact.component.css",
 })
 export class ContactComponent implements OnInit, OnDestroy{
-     private route = inject(ActivatedRoute);   
+  private route = inject(ActivatedRoute);   
   onderwerp: string | null = "";
   success: boolean = false;
   error: boolean = false;
@@ -91,7 +91,9 @@ export class ContactComponent implements OnInit, OnDestroy{
     this.resetMailState();
   }
   ngOnInit() {
-    this.onderwerp = this.route.snapshot.paramMap.get('onderwerp');
+    this.onderwerp = this.route.snapshot.queryParamMap.get('onderwerp') ?? '';
+    console.log(this.onderwerp);
+    
     this.onderwerp !== null ? this.contactData['onderwerp'] = this.onderwerp : null;
   }
   ngOnDestroy(): void {
