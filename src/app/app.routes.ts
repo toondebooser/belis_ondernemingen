@@ -27,7 +27,7 @@ export const routes: Routes = [
     title: "Verkoop",
   },
   {
-    path:"contact",
+    path:"contact/onderwerp?",
     component: ContactComponent ,
     title: "Contact"
 
