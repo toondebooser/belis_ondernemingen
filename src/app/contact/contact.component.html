@@ -30,7 +30,7 @@
 
     <div class="red" [class.blur]="loading">
   @for (inputType of getObjectKeys(validation); track inputType) {
-    @if (validation[inputType] === false) {   <!-- or === true – your invalid marker -->
+    @if (validation[inputType] === false) {   
       <div>* {{ inputType }} Ongeldig</div>
     }
   }

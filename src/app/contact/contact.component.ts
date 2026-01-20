@@ -4,10 +4,13 @@ import {
   inject,
   QueryList,
   ElementRef,
+  OnInit,
+  OnDestroy,
 } from "@angular/core";
 import { PatternService } from "../services/pattern.service";
 import { EmailService } from "../services/email.service";
 import { NgIf, NgClass, NgForOf } from "@angular/common";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-contact",
@@ -16,7 +19,9 @@ import { NgIf, NgClass, NgForOf } from "@angular/common";
   templateUrl: "./contact.component.html",
   styleUrl: "./contact.component.css",
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, OnDestroy{
+     private route = inject(ActivatedRoute);   
+  onderwerp: string | null = "";
   success: boolean = false;
   error: boolean = false;
   loading: boolean = false;
@@ -84,5 +89,12 @@ export class ContactComponent {
     this.inputs.forEach((input) => (input.nativeElement.value = ""));
     this.message = "";
     this.resetMailState();
+  }
+  ngOnInit() {
+    this.onderwerp = this.route.snapshot.paramMap.get('onderwerp');
+    this.onderwerp !== null ? this.contactData['onderwerp'] = this.onderwerp : null;
+  }
+  ngOnDestroy(): void {
+    this.onderwerp= null;
   }
 }
