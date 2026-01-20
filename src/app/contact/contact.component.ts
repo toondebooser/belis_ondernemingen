@@ -91,12 +91,12 @@ export class ContactComponent implements OnInit, OnDestroy{
     this.resetMailState();
   }
   ngOnInit() {
-    this.onderwerp = this.route.snapshot.queryParamMap.get('onderwerp') ?? '';
+    this.onderwerp = this.route.snapshot.queryParamMap.get('onderwerp');
     console.log(this.onderwerp);
     
     this.onderwerp !== null ? this.contactData['onderwerp'] = this.onderwerp : null;
   }
   ngOnDestroy(): void {
-    this.onderwerp= null;
+    this.onderwerp !== null ? this.contactData['onderwerp']  = null : null;
   }
 }
