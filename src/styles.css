@@ -1,55 +1,95 @@
-:root{
-    --primary-color: #473128;
-    --logo-white: #FBFAFA;
+:root {
+  --primary-color: #473128;
+  --logo-white: #fbfafa;
 }
 
 html,
 body {
-
   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Open Sans", "Helvetica Neue", sans-serif;
   height: 100svh;
   margin: 0;
   font-weight: 300;
-  overflow: hidden;    
+  overflow: hidden;
 }
 app-root {
   display: flex;
   flex-direction: column;
-  height: 100svh; 
+  height: 100svh;
 }
-.success{
+.success {
   color: green;
   background-color: lightgreen;
   border-radius: 5px;
   text-align: center;
   height: 100%;
 }
-.error{
+.error {
   background-color: lightpink;
   color: red;
   height: 100%;
-    border-radius: 5px;
+  border-radius: 5px;
   text-align: center;
 }
-a{
-     font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+a {
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Open Sans", "Helvetica Neue", sans-serif;
-    font-weight: 300;
-    text-decoration: none;
-    color: #FBFAFA;
+  font-weight: 300;
+  text-decoration: none;
+  color: #fbfafa;
 }
-.textCard{
+.textCard {
+  display: flex;
+  flex-direction: column;
   background-color: var(--primary-color);
   color: var(--logo-white);
-   font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Open Sans", "Helvetica Neue", sans-serif;
-    align-self: center;
-    width: 50%;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 10px 10px 30px black;
-    backdrop-filter: blur(4px);
-    background: rgba(0,0,0,0.5);
+  align-self: center;
+  width: 50%;
+  max-width: 380px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 30px black;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+.contact {
+  align-self: center;
+  background-color: var(--primary-color);
+  color: var(--logo-white);
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  max-width: 300px;
+}
+.contact:hover {
+  cursor: pointer;
 }
 
+.content {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-sizing: border-box;
+  color: white;
+}

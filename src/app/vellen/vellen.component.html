@@ -1,4 +1,65 @@
-<span class="content">
-        <div class="textCard">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore error nulla ullam repellat corporis hic, at fugit possimus, alias sunt asperiores neque aliquam ipsa ab placeat sit iste fuga nemo?</div>
-
-</span>
+<div class="content">
+  <section>
+        <div style="text-align: center; margin-bottom: 20px;" class="textCard">
+                <h2>Vellen &amp; Frezen</h2>
+        </div>
+    <div class="textCard">
+      <h2>Richtingvelling</h2>
+      <p>boom gecontroleerd laten vallen in gewenste richting.</p>
+      <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Richtingvelling' }"
+        >Vraag je gratis offerte aan</a
+      >
+    </div>
+  </section>
+   <section >
+    <div class="textCard">
+      <h2>Recht vellen</h2>
+      <p>Standaard velling zonder extra hulpmiddelen.</p>
+      <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Recht vellen' }"
+        >Vraag je gratis offerte aan</a
+      >
+    </div>
+  </section>
+   <section >
+    <div class="textCard">
+      <h2>Demonteren</h2>
+      <p>Boom stuk voor stuk uit elkaar halen met bolder en katrol of met behulp van kraan of hoogtewerker.</p>
+      <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Demonteren' }"
+        >Vraag je gratis offerte aan</a
+      >
+    </div>
+  </section>
+     <section >
+    <div class="textCard">
+      <h2>Stormschade</h2>
+      <p>24/24 7/7 beschikbaar voor opruimen van stormschade.</p>
+      <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Stormschade' }"
+        >Vraag je gratis offerte aan</a
+      >
+    </div>
+  </section>
+    <section class="frezen" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)), url('/assets/images/frezen/2.jpg')" >
+    <div class="textCard">
+      <h2 class="fr">Frezen</h2>
+      <p>Uitfrezen van stronken tot gelijk of onder het maaiveld.</p>
+      <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Frezen' }"
+        >Vraag je gratis offerte aan</a
+      >
+    </div>
+  </section>
+</div>
