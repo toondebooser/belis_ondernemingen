@@ -45,7 +45,6 @@ export class ContactComponent implements OnInit, OnDestroy {
   userInput(event: Event, inputType: string): void {
     const input = event.target as HTMLInputElement;
     this.contactData[inputType] = input.value;
-    console.log(this.contactData);
     input.value === ""
       ? (this.validation[inputType] = null)
       : (this.validation[inputType] = this.isValid(input.value, inputType));
