@@ -19,13 +19,13 @@ import { ActivatedRoute } from "@angular/router";
   templateUrl: "./contact.component.html",
   styleUrl: "./contact.component.css",
 })
-export class ContactComponent implements OnInit, OnDestroy{
-  private route = inject(ActivatedRoute);   
+export class ContactComponent implements OnInit, OnDestroy {
+  private route = inject(ActivatedRoute);
   onderwerp: string | null = "";
   success: boolean = false;
   error: boolean = false;
   loading: boolean = false;
-  message: string  = "";
+  message: string = "";
 
   patternService = inject(PatternService);
   emailservice = inject(EmailService);
@@ -44,7 +44,8 @@ export class ContactComponent implements OnInit, OnDestroy{
 
   userInput(event: Event, inputType: string): void {
     const input = event.target as HTMLInputElement;
-    this.contactData[inputType] = input.value.replaceAll("\n", "<br>");
+    this.contactData[inputType] = input.value;
+    console.log(this.contactData);
     input.value === ""
       ? (this.validation[inputType] = null)
       : (this.validation[inputType] = this.isValid(input.value, inputType));
@@ -64,14 +65,13 @@ export class ContactComponent implements OnInit, OnDestroy{
         this.loading = false;
         this.success = true;
         this.message = "Bericht verstuurd";
-         setTimeout(() => this.resetContactSheet(), 3000);
+        setTimeout(() => this.resetContactSheet(), 3000);
       })
       .catch((error) => {
         this.loading = false;
         this.error = true;
         this.message = "Er ging iets mis:" + error;
       });
-
   }
   checkAnyFieldNotEmpty(obj: any): boolean {
     return Object.values(obj).some((value) => value !== "");
@@ -91,12 +91,17 @@ export class ContactComponent implements OnInit, OnDestroy{
     this.resetMailState();
   }
   ngOnInit() {
-    this.onderwerp = this.route.snapshot.queryParamMap.get('onderwerp');
-    console.log(this.onderwerp);
-    
-    this.onderwerp !== null ? this.contactData['onderwerp'] = this.onderwerp : null;
+    this.onderwerp = this.route.snapshot.queryParamMap.get("onderwerp");
+
+
+
+    if (this.onderwerp !== null) {
+      this.contactData["onderwerp"] = this.onderwerp;
+      (this.validation["onderwerp"] = this.isValid(this.onderwerp, "onderwerp"));
+
+    }
   }
   ngOnDestroy(): void {
-    this.onderwerp !== null ? this.contactData['onderwerp']  = null : null;
+    this.onderwerp !== null ? (this.contactData["onderwerp"] = null) : null;
   }
 }
