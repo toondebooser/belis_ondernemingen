@@ -4,12 +4,16 @@
            >
     <div class="textCard">
       <h2>Hakselhout</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias blanditiis quae autem fuga placeat, numquam inventore, magni tenetur ipsam suscipit voluptatibus eum quia eius odit soluta libero ex ipsa voluptas.</p>
-    <a
-          class="contact"
-          routerLink="/contact"
-          >Vraag je offerte aan</a
-        >
+      <ul>
+        <li>Zuivere snippers</li>
+        <li>Snippers met bladgroen</li>
+      </ul>
+ <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Verkoop: hakselhout' }"
+        >Vraag je offerte aan</a
+      >
     </div>
   </section>
 
@@ -17,6 +21,16 @@
            style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.35)), url('/assets/images/verkoop/4.jpeg')">
     <div class="textCard">
       <h2>Brandhout</h2>
+     <ul>
+        <li>Mix ceder,den,cipres &amp; spar</li>
+        <li>Gemengd loofhout</li>
+      </ul>
+       <a
+        class="contact"
+        routerLink="/contact"
+        [queryParams]="{ onderwerp: 'Verkoop: brandhout' }"
+        >Vraag je offerte aan</a
+      >
     </div>
   </section>
 
