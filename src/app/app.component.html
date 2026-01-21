@@ -7,20 +7,36 @@
     />
     <nav>
       <a class="navButton" routerLinkActive="active" routerLink="">Home</a>
-     
-  <a class="navButton" routerLinkActive="active" *ngFor="let service of companyServices.companyServices" [routerLink]="'/' + (service | lowercase)">
-    {{ service }} 
-  </a>
 
+      <a
+        class="navButton"
+        routerLinkActive="active"
+        *ngFor="let service of companyServices.companyServices"
+        [routerLink]="'/' + (service | lowercase)"
+      >
+        {{ service }}
+      </a>
     </nav>
   </div>
 </header>
 <main class="main-bg">
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </main>
 <footer>
   <a href="tel:+32497371107">&#9990; +32 497 37 11 07</a>
   <a href="mailto:nico.belis@hotmail.com" class="envelope"
     >&#9993; nico.belis&#64;hotmail.com
   </a>
+  <p>
+    <a href="https://www.taxusweb.be">
+    Powered by: 
+      Taxusweb
+    </a>
+
+    <!-- <img
+      style="height: 20px"
+      src="/assets/pictogrammen/Taxus logo under 350 kb.png"
+      alt="logo"
+    /> -->
+  </p>
 </footer>

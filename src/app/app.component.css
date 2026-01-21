@@ -33,7 +33,8 @@ footer {
   flex: 0 0 auto;
   display: grid;
   justify-content: center;
-  padding: 10px 0px;
+  padding-top: 10px; 
+
   justify-items: center;
   color: var(--logo-white);
   background-color: var(--primary-color);
