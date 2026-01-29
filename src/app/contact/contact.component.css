@@ -13,6 +13,16 @@
   font-weight: 400
   
 }
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.gegevens{
+  align-self: start;
+  margin-left: 20px;
+}
 
 .verzendButton {
   background-color: var(--primary-color);
